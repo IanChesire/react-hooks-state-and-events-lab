@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 
 function Item({ name, category }) {
-  const [inCart, setCart] = useState(false);
+  const [inCart, setCart] = useState(true);
 
   const handleClick = (event) => {
-    setCart(false);
-   event.target.textContent = "Remove From Cart";
+    setCart(!inCart);
+   event.target.textContent = inCart ? "Add to Cart" : "Remove From Cart"
   }
   const itemClass = inCart ? "" : "in-cart"
 
